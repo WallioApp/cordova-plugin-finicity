@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-finicity",
+  "version": "0.1.0",
+  "description": "Finicity Connect SDK",
+  "cordova": {
+    "id": "cordova-plugin-finicity",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "",
+  "license": "Apache 2.0"
+}

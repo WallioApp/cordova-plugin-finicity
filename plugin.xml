@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-finicity" version="0.1.0">
+
+    <name>Finicity</name>
+    <description>
+        Finicity Connect SDK
+    </description>
+    <license>Apache 2.0</license>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/Finicity.js">
+       <clobbers target="cordova.showFinicityConnect" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Finicity">
+                <param name="android-package" value="com.wallio.cordova.plugin.Finicity"/>
+            </feature>
+        </config-file>
+        <framework src="src/android/cordova-plugin-finicity.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/android/FinicityEventHandler.java" target-dir="src/com/wallio/cordova/plugin" />
+        <source-file src="src/android/Finicity.java" target-dir="src/com/wallio/cordova/plugin" />
+        <lib-file src="src/android/connect-android-sdk-v1.0.4.aar" target-dir="src/com/wallio/cordova/plugin"/>
+    </platform>
+
+    <!-- ios --><!--
+    <platform name="ios">
+        <plugins-plist key="Finicity" string="Finicity" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="Finicity">
+                <param name="ios-package" value="Finicity" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Finicity.h" />
+        <source-file src="src/ios/Finicity.m" />
+    </platform>-->
+</plugin>
